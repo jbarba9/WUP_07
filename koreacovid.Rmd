@@ -1,7 +1,7 @@
 ---
 title: "covid 19"
-author: "Dr K"
-date: "5/2/2020"
+author: "Jiselle Barba"
+date: "11/8/2021"
 output:
   html_document: default
   pdf_document: default
@@ -51,9 +51,11 @@ with(kRdata, table(Sex, result))
 
 
 ## Inferential results 
+  
 
+  
 
 
 
 ## Conclusions
-
+  In conclusion, the data shows that men were seemingly more likely to die rather than women from covid-19. The data was taken at the very start of covid anf not a lot of information was available.
