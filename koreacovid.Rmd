@@ -37,25 +37,37 @@ with(kRdata, table(Sex, result))
 ```
 
 ## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
-
-`
-
   
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
-
-
+```
+  
+  The first plot shows the amount of people who dies was not that great compared to the amount of people who are still alive. The second plot shows that the alive females out number the alive males and the deceased males show that there is more dead males than dead females.
 
   
 ## Numerical results
+  
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
 
 
 ## Inferential results 
   
-
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+  The chi sq test provides the exact numbers. It shows that 1831 were female and 1411 were male that were alive. It also shows that 25 females died but on the other hand, 44 males died
+  
+The fisher test give us the odds of dying for males are 44/1411 and the odds of dying for females are 25/1831. The odds ratio is 44/1411 divided by 25/1831 which is equal to 2.3. The odds ratio shows that males are 2.3 times more likely to die from COVID-19 than females.
   
 
-
-
 ## Conclusions
-  In conclusion, the data shows that men were seemingly more likely to die rather than women from covid-19. The data was taken at the very start of covid anf not a lot of information was available.
+  In conclusion, the data shows that men were seemingly more likely to die rather than women from COVID-19. The data was taken at the very start of COVID and not a lot of information was available.
